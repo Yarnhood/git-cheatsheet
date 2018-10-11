@@ -81,6 +81,7 @@ $ git rm FILE_NAME
 ## 添加一个远程仓库源
 ```
 $ git remote add origin https://SERVER_NAME/USER_NAME/REPO_NAME.git
+$ git remote add origin git@SERVER_NAME:USER_NAME/REPO_NAME.git
 ```
 
 ## 第一次推送
@@ -91,4 +92,10 @@ $ git push -u origin master
 ## 推送
 ```
 $ git push origin master
+```
+
+## 克隆一个远程仓库到本地
+```
+$ git clone https://SERVER_NAME/USER_NAME/REPO_NAME.git
+$ git clone git@SERVER_NAME:USER_NAME/REPO_NAME.git
 ```
