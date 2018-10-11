@@ -99,3 +99,33 @@ $ git push origin master
 $ git clone https://SERVER_NAME/USER_NAME/REPO_NAME.git
 $ git clone git@SERVER_NAME:USER_NAME/REPO_NAME.git
 ```
+
+## 创建新的分支
+- 创建一个新的分支并指向该分支
+```
+    $ git checkout -b BRANCH_NAME
+```
+> 等价于下面两条命令
+1. 创建一个新的分支
+```
+    $ git branch BRANCH_NAME
+```
+2. 指向该分支
+```
+    $ git checkout BRANCH_NAME
+```
+
+## 查看所有的分支
+```
+$ git branch
+```
+
+## 合并指定分支到当前分支
+```
+$ git merge BRANCH_NAME
+```
+
+## 删除指定分支
+```
+$ git branch -d BRANCH_NAME
+```
