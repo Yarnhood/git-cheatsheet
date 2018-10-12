@@ -129,3 +129,152 @@ $ git merge BRANCH_NAME
 ```
 $ git branch -d BRANCH_NAME
 ```
+
+## 查看分支合并图
+```
+$ git log --graph --pretty=oneline --abbrev-commit
+```
+
+## 禁用Fast Forward模式合并分支
+```
+$ git merge --no-ff -m "message" BRANCH_NAME
+```
+
+## 储藏当前工作区
+```
+$ git stash
+```
+
+## 查看储藏的工作区
+```
+$ git stash list
+```
+
+## 恢复储藏的工作区
+1. 第一种方法
+```
+    $ git stash pop
+```
+2. 第二种方法
+```
+    $ git stash apply
+    $ git stash drop
+```
+> 第一种方法恢复后会删除stash记录，第二种方法恢复后需要手动删除stash记录
+
+## 丢弃一个未被合并的分支
+```
+$ git branch -D BRANCH_NAME
+```
+
+## 查看远程库的信息
+1. 查看简易信息
+```
+$ git remote
+```
+2. 查看详细信息
+```
+$ git remote -v
+```
+
+## 推送分支
+```
+$ git push origin BRANCH_NAME
+```
+> 一般推送master分支
+
+## 从远程抓取分支
+```
+$ git pull
+```
+
+## 在本地创建与远程分支对应的分支
+```
+$ git checkout -b BRANCH_NAME origin/BRANCH_NAME
+```
+
+## 建立本地分支与远程分支的关联
+```
+$ git branch --set-upstream BRANCH_NAME origin/BRANCH_NAME
+```
+
+## 变基
+```
+$ git rebase
+```
+
+## 查看标签
+```
+$ git tag
+```
+
+## 创建一个新的标签
+```
+$ git tag TAG_NAME
+```
+> TAG_NAME一般是版本号，例如：v1.0、v1.1
+
+## 创建一个新的带有说明的标签
+```
+$ git tag -a v1.0 -m "Version 1.0 released" 1093d
+```
+> -a 指定标签名，-m 指定说明文字，1093d 为指定的COMMIT_ID
+
+## 查看标签的信息
+```
+$ git show TAG_NAME
+```
+
+## 删除一个本地标签
+```
+$ git tag -d TAG_NAME
+```
+
+## 删除远程的一个标签
+1. 第一步 删除本地的
+```
+    $ git tag -d TAG_NAME
+```
+2. 第二步 push到远程
+```
+    $ git push origin :refs/tags/TAG_NAME
+```
+
+## 推送一个本地的标签
+```
+$ git push origin TAG_NAME
+```
+
+## 推送所以的本地标签
+```
+$ git push origin --tags
+```
+
+## 关联多个远程
+```
+$ git remote add github git@github.com:USER_NAME/REPO_NAME.git
+
+$ git remote add gitee git@gitee:USER_NAME/REPO_NAME.git
+```
+
+## 让Git显示颜色
+```
+$ git config --global color.ui true
+```
+
+## 编写.gitignore文件
+> 忽略一些自动生成的文件或者是一些带有敏感信息的文件
+### 强制添加被ignore的文件
+```
+$ git add -f FILE_NAME
+```
+### 查看文件是否被ignore
+```
+$ git check-ignore -v FILE_NAME
+```
+
+## 配置别名
+```
+$ git config --global alias.st status
+```
+> 将git status简化成git st
